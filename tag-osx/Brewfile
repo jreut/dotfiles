@@ -1,0 +1,21 @@
+# usage:
+#
+# brew tap homebrew/bundle
+# brew bundle
+
+brew 'chruby'   # change my ruby
+brew 'ctags'    # tag my sources
+brew 'git'      # version my code
+brew 'htop'     # visual top
+brew 'httpie'   # neato http cli
+brew 'hub'      # GitHub wraps git
+brew 'neovim'   # vi improved improved
+brew 'pandoc'   # convert anything to anything
+brew 'ruby-install'     # goes with chruby
+brew 'shellcheck'       # correct my shell scripts
+brew 'the_silver_searcher'      # spelled "ag"
+brew 'tmux'     # terminal multiplexer
+brew 'tree'     # pretty ls
+
+tap 'thoughtbot/formulae'
+brew 'rcm'      # dotfiles management
