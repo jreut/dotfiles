@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # git-ps1 from https://github.com/mikegerwitz/git-supp
-GIT_SUPP=${GIT_SUPP:-$HOME/build/git-supp}
+git_supp=${GIT_SUPP:-$HOME/build/git-supp}
 
-if [ -d "$GIT_SUPP" ]; then
+if [ -d "$git_supp" ]; then
   export GITPS1_IND_STAGED='✓'
   export GITPS1_IND_UNSTAGED='◊'
   export GITPS1_IND_UNTRACKED='⋯'
@@ -15,7 +15,7 @@ if [ -d "$GIT_SUPP" ]; then
   export GITPS1_COLOR_UNSTAGED=35
   export GITPS1_COLOR_AHEAD=34
   export GITPS1_COLOR_STATE=37
-  GITPS1="\$($( cat "$GIT_SUPP/git-ps1.sh" ))"
+  gitps1="\$($( cat "$git_supp/git-ps1.sh" ))"
 fi
 
 # ripped from git-ps1 source
@@ -32,6 +32,14 @@ magenta=$(mkcolor 35)
 cyan=$(mkcolor 36)
 white=$(mkcolor 37)
 
-# DD-Mon HH:MM:SS cwd\n$
-export PS1="${green}\D{%-e-%b} ${cyan}\t${clear}${GITPS1} ${magenta}\W ${blue}
-\$${clear} "
+last_error() {
+  last=$?
+  if [ "$last" -ne 0 ]; then
+    echo "✗$last "
+  fi
+}
+
+last_error="${red}\$(last_error)${clear}"
+datetime="${green}\D{%-e-%b} ${cyan}\t${clear}"
+cwd="${magenta}\W${clear}"
+export PS1="$last_error$datetime$gitps1 $cwd $blue\n\$ $clear"
