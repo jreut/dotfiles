@@ -1,0 +1,7 @@
+#!/bin/bash
+
+prefix=$(brew --prefix)
+# chruby from homebrew
+source "$prefix/opt/chruby/share/chruby/chruby.sh"
+source "$prefix/opt/chruby/share/chruby/auto.sh"
+chruby 2.3

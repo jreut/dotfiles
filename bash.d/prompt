@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# git-ps1 from https://github.com/mikegerwitz/git-supp
+GIT_SUPP=${GIT_SUPP:-$HOME/build/git-supp}
+
+if [ -d "$GIT_SUPP" ]; then
+  export GITPS1_IND_UNTRACKED='?'
+  export GITPS1_IND_UNSTAGED='!'
+  export GITPS1_COLOR_DEFAULT=33
+  export GITPS1_COLOR_FASTFWD=36
+  export GITPS1_COLOR_STAGED=32
+  export GITPS1_COLOR_UNTRACKED=31
+  export GITPS1_COLOR_UNSTAGED=35
+  export GITPS1_COLOR_AHEAD=34
+  export GITPS1_COLOR_STATE=37
+  GITPS1="\$($( cat "$GIT_SUPP/git-ps1.sh" ))"
+fi
+
+# ripped from git-ps1 source
+mkcolor() {
+  echo "\[\033[00;$1m\]"
+}
+clear=$(mkcolor 0)
+black=$(mkcolor 30)
+red=$(mkcolor 31)
+green=$(mkcolor 32)
+yellow=$(mkcolor 33)
+blue=$(mkcolor 34)
+magenta=$(mkcolor 35)
+cyan=$(mkcolor 36)
+white=$(mkcolor 37)
+
+# DD-Mon HH:MM:SS cwd\n$
+export PS1="${green}\D{%-e-%b} ${cyan}\t${clear}${GITPS1} ${magenta}\W ${blue}
+\$${clear} "
