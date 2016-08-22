@@ -8,6 +8,7 @@ if [ -d "$git_supp" ]; then
   export GITPS1_IND_UNSTAGED='◊'
   export GITPS1_IND_UNTRACKED='∅'
   export GITPS1_IND_AHEAD='↑'
+  export GITPS1_IND_STATE=0
   export GITPS1_COLOR_DEFAULT=33
   export GITPS1_COLOR_FASTFWD=36
   export GITPS1_COLOR_STAGED=32
