@@ -3,6 +3,7 @@
 # brew tap homebrew/bundle
 # brew bundle
 
+brew 'bash-completion'
 brew 'chruby'   # change my ruby
 brew 'ctags'    # tag my sources
 brew 'git'      # version my code
