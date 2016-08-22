@@ -67,8 +67,8 @@ colorscheme solarized
 " omit vim-flagship hostname
 let g:tabprefix=''
 
-" run Neomake on write
-autocmd! BufWritePost * Neomake
+autocmd VimResized * :wincmd =          " rebalance on resize
+autocmd! BufWritePost * Neomake         " run Neomake on write
 
 " vim-test keymaps
 nmap <silent> <leader>t :TestNearest<CR>
