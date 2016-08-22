@@ -41,11 +41,6 @@ call plug#end()
 
 runtime macros/matchit.vim              " extra text objects
 
-" https://github.com/neovim/neovim/issues/2048#issuecomment-78534227
-if has('nvim')
-  nmap <BS> <C-W>h
-endif
-
 set cursorcolumn                        " highlight current column
 set cursorline                          " highlight current line
 set expandtab                           " replace tabs with spaces
