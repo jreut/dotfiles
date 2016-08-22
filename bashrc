@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export EDITOR=vim
+
 # personal scripts
 export PATH="$HOME/bin:$PATH"
 
