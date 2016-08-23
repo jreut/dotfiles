@@ -1,4 +1,4 @@
-" vim:sw=2 smarttab expandtab
+let mapleader = " "
 
 " vim-plug: https://github.com/junegunn/vim-plug
 call plug#begin()
