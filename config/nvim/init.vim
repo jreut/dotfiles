@@ -6,6 +6,7 @@ Plug 'airblade/vim-gitgutter'           " diff markers in gutter
 Plug 'altercation/vim-colors-solarized' " color scheme
 Plug 'benekastah/neomake'               " compile, lint, etc.
 Plug 'christoomey/vim-tmux-navigator'   " tmux compatability
+Plug 'christoomey/vim-tmux-runner'      " send stuff to tmux
 Plug 'janko-m/vim-test'                 " run test files
 Plug 'kana/vim-textobj-user'            " support textobj-rubyblock
 Plug 'ledger/vim-ledger'                " plain text accounting journals
@@ -65,9 +66,19 @@ let g:tabprefix=''
 autocmd VimResized * :wincmd =          " rebalance on resize
 autocmd! BufWritePost * Neomake         " run Neomake on write
 
+" neovim terminal mode keymaps
+if has('nvim')
+  :tnoremap <Esc><Esc> <C-\><C-n>:q<CR> " double-tap Escape to quit
+endif
+
 " vim-test keymaps
 nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+" use vim-tmux-runner only if we're in tmux
+if $TMUX != ''
+  let test#strategy = "vtr"
+endif
