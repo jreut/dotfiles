@@ -1,0 +1,13 @@
+#!/bin/bash
+
+not_in_tmux() {
+  [[ -z "$TMUX" ]]
+}
+
+ensure_tmux() {
+  if not_in_tmux; then
+    command -v tat >/dev/null 2>&1 && tat
+  fi
+}
+
+ensure_tmux
