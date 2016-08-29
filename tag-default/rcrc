@@ -1,2 +1,3 @@
 TAGS="osx ruby tmux"
 UNDOTTED="Brewfile bin"
+EXCLUDES="*.md *.terminal"
