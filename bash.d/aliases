@@ -3,3 +3,4 @@
 alias vim=nvim
 alias tree="tree -C"    # now in color!
 alias ls='ls -G'        # now in color!
+alias gcd='cd $(git rev-parse --git-dir)/..'
