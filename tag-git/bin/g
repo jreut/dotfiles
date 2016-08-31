@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ "$1" ]; then
+  # shellcheck disable=2068
+  git "$@"
+else
+  git status
+fi
