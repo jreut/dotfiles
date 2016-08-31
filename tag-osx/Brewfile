@@ -14,6 +14,7 @@ brew 'pandoc'   # convert anything to anything
 brew 'ruby-install'     # goes with chruby
 brew 'shellcheck'       # correct my shell scripts
 brew 'the_silver_searcher'      # spelled "ag"
+brew 'tig'      # git graph
 brew 'tmux'     # terminal multiplexer
 brew 'tree'     # pretty ls
 
