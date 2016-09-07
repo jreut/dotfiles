@@ -4,7 +4,9 @@ alias b=bundle
 alias be='bundle exec'
 alias brake='bundle exec rake'
 
-prefix=$(brew --prefix)
-# chruby from homebrew
-source "$prefix/opt/chruby/share/chruby/chruby.sh"
-source "$prefix/opt/chruby/share/chruby/auto.sh"
+eval "$(rbenv init -)"
+
+# prefix=$(brew --prefix)
+# # chruby from homebrew
+# source "$prefix/opt/chruby/share/chruby/chruby.sh"
+# source "$prefix/opt/chruby/share/chruby/auto.sh"

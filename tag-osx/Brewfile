@@ -20,6 +20,7 @@ brew 'tree'     # pretty ls
 
 tap 'thoughtbot/formulae'
 brew 'rcm'      # dotfiles management
+brew 'gitsh'    # a Git shell
 
 tap 'neovim/neovim'
 brew 'neovim'   # vi improved improved

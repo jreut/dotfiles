@@ -2,8 +2,10 @@
 
 export EDITOR=vim
 
+
 # personal scripts
 export PATH="$HOME/bin:$PATH"
+export PATH="/usr/local/bin:$PATH" # fixup homebrew
 
 # hacky bash config plugin system
 for FILE in ~/.bash.d/*; do

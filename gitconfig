@@ -16,3 +16,5 @@
 	cm = commit -m
 [push]
 	default = simple
+[init]
+	templatedir = /Users/jreut/.git_template
