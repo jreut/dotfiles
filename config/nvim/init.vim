@@ -3,15 +3,20 @@ let mapleader = " "
 " vim-plug: https://github.com/junegunn/vim-plug
 call plug#begin()
 Plug 'airblade/vim-gitgutter'           " diff markers in gutter
-Plug 'altercation/vim-colors-solarized' " color scheme
+" Plug 'altercation/vim-colors-solarized' " color scheme
+" Plug 'jnurmine/Zenburn'
 Plug 'benekastah/neomake'               " compile, lint, etc.
 Plug 'christoomey/vim-tmux-navigator'   " tmux compatability
 Plug 'christoomey/vim-tmux-runner'      " send stuff to tmux
 Plug 'janko-m/vim-test'                 " run test files
+Plug 'junegunn/vim-peekaboo'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user'            " support textobj-rubyblock
 Plug 'ledger/vim-ledger'                " plain text accounting journals
 Plug 'nelstrom/vim-textobj-rubyblock'   " `ar`, `ir` et al. text objects
-Plug 'rking/ag.vim'                     " :Ag
+" Plug 'pangloss/vim-javascript'          " improved JS syntax
+" Plug 'rking/ag.vim'                     " :Ag
+Plug 'sheerun/vim-polyglot'             " All the language packs
 Plug 'tpope/vim-bundler'                " :Bundle
 Plug 'tpope/vim-commentary'             " `gcc` and friends
 Plug 'tpope/vim-endwise'                " block/method completions
@@ -27,22 +32,22 @@ Plug 'tpope/vim-sleuth'                 " automatic tab/spaces settings
 Plug 'tpope/vim-surround'               " `ysaw(` et al.
 Plug 'tpope/vim-unimpaired'             " `]t` et al.
 Plug 'tpope/vim-vinegar'                " directory listing via `-`
-Plug 'vim-ruby/vim-ruby'                " bleeding-edge ruby runtime files
+" Plug 'vim-ruby/vim-ruby'                " bleeding-edge ruby runtime files
 Plug 'vim-pandoc/vim-pandoc'            " :Pandoc
 Plug 'vim-pandoc/vim-pandoc-syntax'     " Pandoc syntax for markdown, tex, et al.
 Plug 'vim-utils/vim-man'                " inline manpages
-if has('python3')
-  function! DoRemote(arg)
-    UpdateRemotePlugins
-  endfunction
-  " crazy good autocomplete (requires python3)
-  Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-endif
+" if has('python3')
+"   function! DoRemote(arg)
+"     UpdateRemotePlugins
+"   endfunction
+"   " crazy good autocomplete (requires python3)
+"   Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+" endif
 call plug#end()
 
 runtime macros/matchit.vim              " extra text objects
 
-set cursorcolumn                        " highlight current column
+" set cursorcolumn                        " highlight current column
 set cursorline                          " highlight current line
 set expandtab                           " replace tabs with spaces
 set ignorecase                          " case-insensitive search
@@ -56,9 +61,19 @@ set smartcase                           " use with ignorecase
 set smarttab                            " use shiftwidth for indentation
 
 " themeing
-set background=light
-let g:solarized_visibility='low'        " fade listchars
-colorscheme solarized
+colorscheme default
+set background=dark
+hi Normal ctermfg=White ctermbg=black
+hi VertSplit ctermfg=bg ctermbg=bg cterm=NONE
+hi StatusLine cterm=underline
+hi StatusLineNC cterm=NONE ctermfg=NONE
+hi TabLine cterm=underline ctermbg=NONE
+hi TabLineFill cterm=underline
+hi TabLineSel cterm=bold
+hi CursorLine ctermbg=234 cterm=NONE
+hi CursorColumn ctermbg=234 cterm=NONE
+hi LineNr ctermfg=3 ctermbg=NONE
+hi CursorlineNr ctermbg=234
 
 " omit vim-flagship hostname
 let g:tabprefix=''
@@ -72,11 +87,11 @@ if has('nvim')
 endif
 
 " vim-test keymaps
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
+nnoremap <silent> <leader>t :TestNearest<CR>
+nnoremap <silent> <leader>T :TestFile<CR>
+nnoremap <silent> <leader>a :TestSuite<CR>
+nnoremap <silent> <leader>l :TestLast<CR>
+nnoremap <silent> <leader>g :TestVisit<CR>
 
 " use vim-tmux-runner only if we're in tmux
 if $TMUX != ''
