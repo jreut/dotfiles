@@ -7,15 +7,16 @@ Plug 'altercation/vim-colors-solarized' " color scheme
 Plug 'benekastah/neomake'               " compile, lint, etc.
 Plug 'christoomey/vim-tmux-navigator'   " tmux compatability
 Plug 'christoomey/vim-tmux-runner'      " send stuff to tmux
-Plug 'ctrlpvim/ctrlp.vim'               " fuzzy finder via C-p, :CtrlP
+" Plug 'ctrlpvim/ctrlp.vim'               " fuzzy finder via C-p, :CtrlP
 Plug 'janko-m/vim-test'                 " run test files
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user'            " support textobj-rubyblock
 Plug 'ledger/vim-ledger'                " plain text accounting journals
 Plug 'mtth/scratch.vim'                 " gs, gS, :Scratch for a scratch buffer
 Plug 'mxw/vim-jsx'                      " JSX syntax
 Plug 'nelstrom/vim-textobj-rubyblock'   " `ar`, `ir` et al. text objects
 " Plug 'pangloss/vim-javascript'          " JavaScript syntax
-Plug 'rking/ag.vim'                     " :Ag
+" Plug 'rking/ag.vim'                     " :Ag
 Plug 'sheerun/vim-polyglot'             " lots of languages
 Plug 'tpope/vim-bundler'                " :Bundle
 Plug 'tpope/vim-commentary'             " `gcc` and friends
@@ -32,7 +33,7 @@ Plug 'tpope/vim-sleuth'                 " automatic tab/spaces settings
 Plug 'tpope/vim-surround'               " `ysaw(` et al.
 Plug 'tpope/vim-unimpaired'             " `]t` et al.
 Plug 'tpope/vim-vinegar'                " directory listing via `-`
-" Plug 'vim-ruby/vim-ruby'                " bleeding-edge ruby runtime files
+Plug 'vim-ruby/vim-ruby'                " bleeding-edge ruby runtime files
 Plug 'vim-pandoc/vim-pandoc'            " :Pandoc
 Plug 'vim-pandoc/vim-pandoc-syntax'     " Pandoc syntax for markdown, tex, et al.
 Plug 'vim-utils/vim-man'                " inline manpages
@@ -69,8 +70,8 @@ colorscheme solarized
 let g:tabprefix=''
 
 " Use Ag for CtrlP searching
-let g:ctrlp_user_command = 'ag %s -l --ignore .git --ignore node_modules --hidden --nocolor -g ""'
-let g:ctrlp_use_caching = 0
+" let g:ctrlp_user_command = 'ag %s -l --ignore .git --ignore node_modules --hidden --nocolor -g ""'
+" let g:ctrlp_use_caching = 0
 
 " Let us use Pandoc syntax for markdown
 let g:polyglot_disabled = ['markdown']
@@ -89,6 +90,10 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+" vim~fzf keymaps
+nmap <leader>p :Files<CR>
+nmap <leader>P :Ag<CR>
 
 " use vim-tmux-runner only if we're in tmux
 if $TMUX != ''

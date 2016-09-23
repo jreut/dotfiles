@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export EDITOR=vim
+export EDITOR=nvim
 
 
 # personal scripts
@@ -17,3 +17,5 @@ if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
   # shellcheck source=/usr/local/etc/bash_completion
   . "$(brew --prefix)/etc/bash_completion"
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

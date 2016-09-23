@@ -14,7 +14,11 @@
 	d = diff
 	gconfig = config --global
 	cm = commit -m
+	ds = diff --staged
+	dstat = diff --stat
 [push]
 	default = simple
 [init]
 	templatedir = /Users/jreut/.git_template
+[merge]
+	conflictstyle = diff3
