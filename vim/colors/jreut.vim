@@ -5,9 +5,9 @@ endif
 
 let g:colors_name = 'jreut'
 
-hi Normal       cterm=NONE      ctermfg=252     ctermbg=bg
+hi Normal       cterm=NONE      ctermfg=252     ctermbg=Black
 
-hi EndOfBuffer  cterm=NONE      ctermfg=NONE    ctermbg=16
+hi EndOfBuffer  cterm=NONE      ctermfg=bg      ctermbg=bg
 hi! default link ColorColumn EndOfBuffer
 hi NonText      cterm=NONE      ctermfg=238     ctermbg=NONE
 hi VertSplit    cterm=NONE      ctermfg=59      ctermbg=NONE
