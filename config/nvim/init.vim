@@ -37,7 +37,7 @@ call plug#end()
 
 runtime macros/matchit.vim              " extra text objects
 
-set cursorline                          " highlight current line
+" set cursorline                          " highlight current line
 set expandtab                           " replace tabs with spaces
 set ignorecase                          " case-insensitive search
 set list                                " show whitespace
@@ -48,21 +48,11 @@ set shiftwidth=2                        " two-space indent
 set showcmd                             " show keymaps as I type
 set smartcase                           " use with ignorecase
 set smarttab                            " use shiftwidth for indentation
-
-" themeing
-colorscheme default
-set background=dark
-hi Normal ctermfg=White ctermbg=black
-hi VertSplit ctermfg=bg ctermbg=bg cterm=NONE
-hi StatusLine cterm=underline
-hi StatusLineNC cterm=NONE ctermfg=NONE
-hi TabLine cterm=underline ctermbg=NONE
-hi TabLineFill cterm=underline
-hi TabLineSel cterm=bold
-hi CursorLine ctermbg=234 cterm=NONE
-hi CursorColumn ctermbg=234 cterm=NONE
-hi LineNr ctermfg=3 ctermbg=NONE
-hi CursorlineNr ctermbg=234
+set laststatus=2
+set showtabline=2
+set guioptions-=e
+set statusline=
+set colorcolumn=+1
 
 " omit vim-flagship hostname
 let g:tabprefix=''
@@ -93,3 +83,7 @@ nmap <leader>P :Ag<CR>
 if $TMUX != ''
   let test#strategy = "vtr"
 endif
+
+" themeing
+colorscheme jreut
+set background=dark

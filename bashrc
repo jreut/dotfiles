@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export EDITOR=nvim
+export EDITOR=vim
 
 
 # personal scripts

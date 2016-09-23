@@ -1,0 +1,1 @@
+/Users/jreut/.config/nvim/init.vim
