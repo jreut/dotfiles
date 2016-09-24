@@ -31,7 +31,6 @@ hi DiffChange   cterm=NONE      ctermfg=16      ctermbg=184
 hi DiffDelete   cterm=NONE      ctermfg=16      ctermbg=161
 hi DiffText     cterm=bold      ctermfg=16      ctermbg=184
 
-hi Comment      cterm=NONE      ctermfg=102     ctermbg=NONE
 hi Title        cterm=underline ctermfg=255     ctermbg=NONE
 
 hi SpellBad     cterm=undercurl ctermfg=NONE    ctermbg=88
@@ -43,12 +42,23 @@ hi PmenuSel     cterm=bold      ctermfg=250     ctermbg=25
 hi PmenuSbar    cterm=NONE      ctermfg=NONE    ctermbg=61
 hi PmenuThumb   cterm=NONE      ctermfg=NONE    ctermbg=63
 
+hi Todo         cterm=underline ctermfg=178     ctermbg=NONE
+hi Type         cterm=bold      ctermfg=43      ctermbg=NONE
+hi Keyword      cterm=NONE      ctermfg=202     ctermbg=NONE
+hi Statement    cterm=NONE      ctermfg=209     ctermbg=NONE
+hi String       cterm=NONE      ctermfg=157     ctermbg=NONE
+hi Number       cterm=NONE      ctermfg=147     ctermbg=NONE
+hi Comment      cterm=NONE      ctermfg=244     ctermbg=NONE
+hi Special      cterm=NONE      ctermfg=220     ctermbg=NONE
+hi Identifier   cterm=NONE      ctermfg=87      ctermbg=NONE
+hi Function     cterm=bold      ctermfg=86     ctermbg=NONE
+
 """ Ruby syntax
 " XXX: for finding unstyled things
 hi PickerUpper          cterm=underline ctermfg=red     ctermbg=blue
 
 "" keyword-like
-hi rubyKeyword          cterm=NONE      ctermfg=202     ctermbg=NONE
+hi! def link rubyKeyword Keyword
 hi rubyInclude          cterm=underline ctermfg=202     ctermbg=NONE
 hi rubyModule           cterm=underline ctermfg=203     ctermbg=NONE
 hi rubyClass            cterm=underline ctermfg=204     ctermbg=NONE
@@ -73,19 +83,19 @@ hi! def link rubyPredefinedConstant rubyPredefinedIdentifier
 hi! def link rubyPseudoVariable rubyPredefinedIdentifier
 hi! def link rubyBoolean rubyPredefinedIdentifier
 hi rubySymbol           cterm=NONE      ctermfg=42      ctermbg=NONE
-hi rubyConstant         cterm=bold      ctermfg=43      ctermbg=NONE
+hi! def link rubyConstant Type
 hi rubyGlobalVariable   cterm=bold      ctermfg=125      ctermbg=NONE
 hi rubyClassVariable    cterm=NONE      ctermfg=126      ctermbg=NONE
 hi rubyInstanceVariable cterm=NONE      ctermfg=217      ctermbg=NONE
-hi rubyIdentifier       cterm=NONE      ctermfg=87      ctermbg=NONE
-hi rubyFunction         cterm=bold      ctermfg=86     ctermbg=NONE
+hi! def link rubyIdentifier Identifier
+hi! def link rubyFunction Function
 
 "" literals
-hi rubyInteger          cterm=NONE      ctermfg=147     ctermbg=NONE
+hi! def link rubyInteger Number
 hi! def link rubyFloat rubyInteger
 
 "" strings and regexen
-hi rubyString           cterm=NONE      ctermfg=157     ctermbg=NONE
+hi! def link rubyString String
 hi rubyStringEscape     cterm=bold      ctermfg=203     ctermbg=NONE
 hi! def link rubyInterpolation rubyMethodBlock
 hi! link rubyNoInterpolation PickerUpper
@@ -120,16 +130,16 @@ hi rubyArrayDelimiter   cterm=NONE      ctermfg=223     ctermbg=NONE
 hi rubyCurlyBlockDelimiter cterm=NONE   ctermfg=222     ctermbg=NONE
 hi! def link rubyBracketOperator  rubyArrayDelimiter
 hi rubyBlockParameterList cterm=NONE    ctermfg=221     ctermbg=NONE
-hi rubyOperator         cterm=NONE      ctermfg=220     ctermbg=NONE
+hi! def link rubyOperator Special
 
 "" comments
-hi rubyComment          cterm=NONE      ctermfg=244     ctermbg=NONE
+hi! def link rubyComment Comment
 hi rubyMultilineComment cterm=NONE      ctermfg=243     ctermbg=NONE
 hi rubyDocumentation    cterm=NONE      ctermfg=242     ctermbg=NONE
 hi rubyDataDirective    cterm=NONE      ctermfg=241     ctermbg=NONE
 hi rubyData             cterm=NONE      ctermfg=240     ctermbg=NONE
 hi rubySharpBang        cterm=bold      ctermfg=239     ctermbg=NONE
-hi rubyTodo             cterm=underline ctermfg=178     ctermbg=NONE
+hi! def link rubyTodo Todo
 
 "" regions
 hi! def link rubyMethodBlock Normal
@@ -138,7 +148,7 @@ hi! link rubyBlockExpression PickerUpper
 hi! def link rubyCaseExpression Normal
 hi! link rubyClassDeclaration PickerUpper
 hi! link rubyConditionalExpression PickerUpper
-hi! link rubyCurlyBlock PickerUpper
+hi! def link rubyCurlyBlock Normal
 hi! link rubyDeclaration PickerUpper
 hi! def link rubyDoBlock Normal
 hi! link rubyMethodDeclaration PickerUpper

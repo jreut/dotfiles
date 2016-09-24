@@ -19,7 +19,7 @@ Plug 'tpope/vim-bundler'                " :Bundle
 Plug 'tpope/vim-commentary'             " `gcc` and friends
 Plug 'tpope/vim-endwise'                " block/method completions
 Plug 'tpope/vim-eunuch'                 " :Rename, :Move and friends
-Plug 'tpope/vim-flagship'               " better tabline
+" Plug 'tpope/vim-flagship'               " better tabline
 Plug 'tpope/vim-fugitive'               " git wrapper
 Plug 'tpope/vim-projectionist'          " per-project configuration
 Plug 'tpope/vim-rails'                  " :Rails
