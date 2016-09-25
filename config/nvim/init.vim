@@ -19,7 +19,7 @@ Plug 'tpope/vim-bundler'                " :Bundle
 Plug 'tpope/vim-commentary'             " `gcc` and friends
 Plug 'tpope/vim-endwise'                " block/method completions
 Plug 'tpope/vim-eunuch'                 " :Rename, :Move and friends
-Plug 'tpope/vim-flagship'               " better tabline
+" Plug 'tpope/vim-flagship'               " better tabline
 Plug 'tpope/vim-fugitive'               " git wrapper
 Plug 'tpope/vim-projectionist'          " per-project configuration
 Plug 'tpope/vim-rails'                  " :Rails
@@ -33,6 +33,7 @@ Plug 'tpope/vim-vinegar'                " directory listing via `-`
 Plug 'vim-pandoc/vim-pandoc'            " :Pandoc
 Plug 'vim-pandoc/vim-pandoc-syntax'     " Pandoc syntax for markdown, tex, et al.
 Plug 'vim-utils/vim-man'                " inline manpages
+Plug 'guns/xterm-color-table.vim'
 call plug#end()
 
 runtime macros/matchit.vim              " extra text objects
@@ -52,7 +53,7 @@ set laststatus=2
 set showtabline=2
 set guioptions-=e
 set statusline=
-set colorcolumn=+1
+set fillchars=
 
 " omit vim-flagship hostname
 let g:tabprefix=''
