@@ -147,7 +147,7 @@ hi! def link rubyBlock Normal
 hi! link rubyBlockExpression PickerUpper
 hi! def link rubyCaseExpression Normal
 hi! link rubyClassDeclaration PickerUpper
-hi! link rubyConditionalExpression PickerUpper
+hi! def link rubyConditionalExpression Normal
 hi! def link rubyCurlyBlock Normal
 hi! link rubyDeclaration PickerUpper
 hi! def link rubyDoBlock Normal
@@ -164,9 +164,9 @@ hi! link rubyRepeatExpression PickerUpper
 hi! link rubyAliasDeclaration PickerUpper
 hi! link rubyAliasDeclaration PickerUpper
 hi! link rubyAliasDeclaration2 PickerUpper
-hi! link rubyArrayLiteral PickerUpper
+hi! def link rubyArrayLiteral Normal
 hi! link rubyBlockArgument PickerUpper
-hi! link rubyBlockParameter PickerUpper
+hi! def link rubyBlockParameter rubyIdentifier
 hi! link rubyCapitalizedMethod PickerUpper
 hi! link rubyExtendedStringSpecial PickerUpper
 hi! link rubyHeredoc PickerUpper
@@ -177,6 +177,9 @@ hi! link rubyNotTop PickerUpper
 "" transparents
 hi! link rubyKeywordAsMethod PickerUpper
 hi! link rubyLocalVariableOrMethod PickerUpper
+
+""" Rails syntax
+hi! def link railsMethod rubyAttribute
 
 """ RSpec syntax
 hi rspecBeforeAndAfter  cterm=bold      ctermfg=162     ctermbg=NONE
