@@ -26,10 +26,12 @@ hi Folded       cterm=NONE      ctermfg=fg      ctermbg=235
 hi! default link FoldColumn CursorLineNr
 hi! default link Conceal Folded
 
-hi DiffAdd      cterm=NONE      ctermfg=16      ctermbg=34
-hi DiffChange   cterm=NONE      ctermfg=16      ctermbg=184
-hi DiffDelete   cterm=NONE      ctermfg=16      ctermbg=161
-hi DiffText     cterm=bold      ctermfg=16      ctermbg=184
+hi DiffAdd      cterm=NONE      ctermfg=34      ctermbg=NONE
+hi! def link diffAdded DiffAdd
+hi DiffChange   cterm=NONE      ctermfg=NONE    ctermbg=220
+hi DiffDelete   cterm=NONE      ctermfg=161      ctermbg=NONE
+hi! def link diffRemoved DiffDelete
+hi DiffText     cterm=bold      ctermfg=16      ctermbg=NONE
 
 hi Title        cterm=underline ctermfg=255     ctermbg=NONE
 
@@ -151,7 +153,7 @@ hi! def link rubyConditionalExpression Normal
 hi! def link rubyCurlyBlock Normal
 hi! link rubyDeclaration PickerUpper
 hi! def link rubyDoBlock Normal
-hi! link rubyMethodDeclaration PickerUpper
+hi! def link rubyMethodDeclaration Normal
 hi! link rubyModuleDeclaration PickerUpper
 hi! link rubyNestedAngleBrackets PickerUpper
 hi! link rubyNestedCurlyBraces PickerUpper
@@ -170,7 +172,7 @@ hi! def link rubyBlockParameter rubyIdentifier
 hi! link rubyCapitalizedMethod PickerUpper
 hi! link rubyExtendedStringSpecial PickerUpper
 hi! link rubyHeredoc PickerUpper
-hi! link rubyHeredocStart PickerUpper
+hi! def link rubyHeredocStart Normal
 hi! link rubyLineContinuation PickerUpper
 hi! link rubyNotTop PickerUpper
 
@@ -189,10 +191,11 @@ hi rspecMessageExpectation cterm=bold   ctermfg=180     ctermbg=NONE
 hi rspecKeywords        cterm=bold      ctermfg=186     ctermbg=NONE
 hi rspecMockMethods     cterm=bold      ctermfg=192     ctermbg=NONE
 hi rspecMocks           cterm=bold      ctermfg=180     ctermbg=NONE
-
 """ GitGutter syntax
-hi GitGutterAdd         cterm=NONE      ctermfg=34      ctermbg=NONE
-hi GitGutterChange      cterm=NONE      ctermfg=184     ctermbg=NONE
-hi GitGutterDelete      cterm=NONE      ctermfg=161     ctermbg=NONE
+hi GitGutterAdd         cterm=NONE      ctermfg=64      ctermbg=NONE
+hi GitGutterChange      cterm=NONE      ctermfg=136     ctermbg=NONE
+
+hi GitGutterDelete      cterm=NONE      ctermfg=125     ctermbg=NONE
+hi GitGutterChangeDelete cterm=NONE     ctermfg=130     ctermbg=NONE
 
 set bg=dark

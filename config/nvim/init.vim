@@ -41,10 +41,10 @@ runtime macros/matchit.vim              " extra text objects
 " set cursorline                          " highlight current line
 set expandtab                           " replace tabs with spaces
 set ignorecase                          " case-insensitive search
-set list                                " show whitespace
+set nolist                                " show whitespace
 set listchars+=tab:¬\ ,trail:·,nbsp:+,eol:◊,extends:▶,precedes:◀,conceal:※
-set number                              " show line numbers
-set relativenumber                      " instead of absolute line number
+set nonumber                              " show line numbers
+set norelativenumber                      " instead of absolute line number
 set shiftwidth=2                        " two-space indent
 set showcmd                             " show keymaps as I type
 set smartcase                           " use with ignorecase
@@ -79,6 +79,12 @@ nnoremap <silent> <leader>g :TestVisit<CR>
 " vim~fzf keymaps
 nmap <leader>p :Files<CR>
 nmap <leader>P :Ag<CR>
+
+" GitGutter config
+let g:gitgutter_sign_added = '┃'
+let g:gitgutter_sign_modified = '┃'
+let g:gitgutter_sign_removed = '┃'
+let g:gitgutter_sign_modified_removed = '┃'
 
 " use vim-tmux-runner only if we're in tmux
 if $TMUX != ''
