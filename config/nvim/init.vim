@@ -40,21 +40,23 @@ runtime macros/matchit.vim              " extra text objects
 
 " set cursorline                        " highlight current line
 set expandtab                           " replace tabs with spaces
+set fillchars=                          " status line, vertical separator fill characters
+set hlsearch                            " highlight search matches
 set ignorecase                          " case-insensitive search
-set nolist                              " show whitespace
+set incsearch                           " search as I type
+set laststatus=2                        " always show a status line
 set listchars+=tab:¬\ ,trail:·,nbsp:+,eol:◊,extends:▶,precedes:◀,conceal:※
+set nolist                              " show whitespace
 set nonumber                            " don't show line numbers
 set norelativenumber                    " off by default, but I turn it on when I do want numbers
 set shiftwidth=2                        " two-space indent
 set showcmd                             " show keymaps as I type
+set showtabline=2                       " always show the tab line
 set smartcase                           " use with ignorecase
 set smarttab                            " use shiftwidth for indentation
-set laststatus=2                        " always show a status line
-set showtabline=2                       " always show the tab line
-set statusline=                         " basic status line
-set fillchars=                          " status line, vertical separator fill characters
 set splitbelow                          " open horizontal splits below
 set splitright                          " open vertical splits to the right
+set statusline=                         " basic status line
 set updatetime=200                      " faster faster faster!
 
 " omit vim-flagship hostname
