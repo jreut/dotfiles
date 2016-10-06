@@ -38,22 +38,23 @@ call plug#end()
 
 runtime macros/matchit.vim              " extra text objects
 
-" set cursorline                          " highlight current line
+" set cursorline                        " highlight current line
 set expandtab                           " replace tabs with spaces
 set ignorecase                          " case-insensitive search
-set nolist                                " show whitespace
+set nolist                              " show whitespace
 set listchars+=tab:¬\ ,trail:·,nbsp:+,eol:◊,extends:▶,precedes:◀,conceal:※
-set nonumber                              " show line numbers
-set norelativenumber                      " instead of absolute line number
+set nonumber                            " don't show line numbers
+set norelativenumber                    " off by default, but I turn it on when I do want numbers
 set shiftwidth=2                        " two-space indent
 set showcmd                             " show keymaps as I type
 set smartcase                           " use with ignorecase
 set smarttab                            " use shiftwidth for indentation
-set laststatus=2
-set showtabline=2
-set guioptions-=e
-set statusline=
-set fillchars=
+set laststatus=2                        " always show a status line
+set showtabline=2                       " always show the tab line
+set statusline=                         " basic status line
+set fillchars=                          " status line, vertical separator fill characters
+set splitbelow                          " open horizontal splits below
+set splitright                          " open vertical splits to the right
 
 " omit vim-flagship hostname
 let g:tabprefix=''
@@ -64,11 +65,6 @@ let g:polyglot_disabled = ['markdown']
 autocmd VimResized * :wincmd =          " rebalance on resize
 autocmd! BufWritePost * Neomake         " run Neomake on write
 
-" neovim terminal mode keymaps
-if has('nvim')
-  :tnoremap <Esc><Esc> <C-\><C-n>:q<CR> " double-tap Escape to quit
-endif
-
 " vim-test keymaps
 nnoremap <silent> <leader>t :TestNearest<CR>
 nnoremap <silent> <leader>T :TestFile<CR>
@@ -78,7 +74,6 @@ nnoremap <silent> <leader>g :TestVisit<CR>
 
 " vim~fzf keymaps
 nmap <leader>p :Files<CR>
-nmap <leader>P :Ag<CR>
 
 " GitGutter config
 let g:gitgutter_sign_added = '┃'
