@@ -17,6 +17,7 @@ Plug 'nelstrom/vim-textobj-rubyblock'   " `ar`, `ir` et al. text objects
 Plug 'sheerun/vim-polyglot'             " lots of languages
 Plug 'tpope/vim-bundler'                " :Bundle
 Plug 'tpope/vim-commentary'             " `gcc` and friends
+Plug 'tpope/vim-dispatch'               " async
 Plug 'tpope/vim-endwise'                " block/method completions
 Plug 'tpope/vim-eunuch'                 " :Rename, :Move and friends
 " Plug 'tpope/vim-flagship'               " better tabline
