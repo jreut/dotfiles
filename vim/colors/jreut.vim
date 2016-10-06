@@ -26,14 +26,14 @@ hi Folded       cterm=NONE      ctermfg=fg      ctermbg=235
 hi! default link FoldColumn CursorLineNr
 hi! default link Conceal Folded
 
-hi DiffAdd      cterm=NONE      ctermfg=34      ctermbg=NONE
+hi DiffAdd      cterm=NONE      ctermfg=64      ctermbg=NONE
 hi! def link diffAdded DiffAdd
-hi DiffChange   cterm=NONE      ctermfg=NONE    ctermbg=220
-hi DiffDelete   cterm=NONE      ctermfg=161      ctermbg=NONE
+hi DiffChange   cterm=NONE      ctermfg=136     ctermbg=NONE
+hi DiffDelete   cterm=NONE      ctermfg=125     ctermbg=NONE
 hi! def link diffRemoved DiffDelete
-hi DiffText     cterm=bold      ctermfg=16      ctermbg=NONE
+hi DiffText     cterm=NONE      ctermfg=bg      ctermbg=136
 
-hi Title        cterm=underline ctermfg=255     ctermbg=NONE
+hi Title        cterm=underline ctermfg=87      ctermbg=NONE
 
 hi SpellBad     cterm=undercurl ctermfg=NONE    ctermbg=88
 hi SpellCap     cterm=undercurl ctermfg=NONE    ctermbg=91
@@ -61,12 +61,12 @@ hi PickerUpper          cterm=underline ctermfg=red     ctermbg=blue
 
 "" keyword-like
 hi! def link rubyKeyword Keyword
-hi rubyInclude          cterm=underline ctermfg=202     ctermbg=NONE
-hi rubyModule           cterm=underline ctermfg=203     ctermbg=NONE
-hi rubyClass            cterm=underline ctermfg=204     ctermbg=NONE
-hi rubyAttribute        cterm=underline ctermfg=205     ctermbg=NONE
-hi rubyAccess           cterm=underline ctermfg=206     ctermbg=NONE
-hi rubyDefine           cterm=underline ctermfg=207     ctermbg=NONE
+hi rubyInclude          cterm=bold      ctermfg=202     ctermbg=NONE
+hi rubyModule           cterm=bold      ctermfg=203     ctermbg=NONE
+hi rubyClass            cterm=bold      ctermfg=204     ctermbg=NONE
+hi rubyAttribute        cterm=bold      ctermfg=205     ctermbg=NONE
+hi rubyAccess           cterm=bold      ctermfg=206     ctermbg=NONE
+hi rubyDefine           cterm=bold      ctermfg=207     ctermbg=NONE
 hi rubyControl          cterm=bold      ctermfg=173     ctermbg=NONE
 hi! def link rubyOptionalDo     rubyControl
 hi! def link rubyConditional    rubyControl
@@ -146,7 +146,7 @@ hi! def link rubyTodo Todo
 "" regions
 hi! def link rubyMethodBlock Normal
 hi! def link rubyBlock Normal
-hi! link rubyBlockExpression PickerUpper
+hi! def link rubyBlockExpression Normal
 hi! def link rubyCaseExpression Normal
 hi! link rubyClassDeclaration PickerUpper
 hi! def link rubyConditionalExpression Normal
