@@ -55,6 +55,7 @@ set statusline=                         " basic status line
 set fillchars=                          " status line, vertical separator fill characters
 set splitbelow                          " open horizontal splits below
 set splitright                          " open vertical splits to the right
+set updatetime=200                      " faster faster faster!
 
 " omit vim-flagship hostname
 let g:tabprefix=''
@@ -73,7 +74,11 @@ nnoremap <silent> <leader>l :TestLast<CR>
 nnoremap <silent> <leader>g :TestVisit<CR>
 
 " vim~fzf keymaps
-nmap <leader>p :Files<CR>
+nnoremap <leader>p :Files<CR>
+
+" GitGutter keymaps
+nnoremap ]h :GitGutterNextHunk<CR>
+nnoremap [h :GitGutterPrevHunk<CR>
 
 " GitGutter config
 let g:gitgutter_sign_added = '┃'
