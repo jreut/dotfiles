@@ -12,6 +12,7 @@ brew 'git'      # version my code
 brew 'htop'     # visual top
 brew 'httpie'   # neato http cli
 brew 'hub'      # GitHub wraps git
+brew 'lesspipe' # less preproccessor
 brew 'pandoc'   # convert anything to anything
 brew 'reattach-to-user-namespace'
 brew 'ruby-install'     # goes with chruby

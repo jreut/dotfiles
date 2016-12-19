@@ -6,12 +6,16 @@ Plug 'airblade/vim-gitgutter'           " diff markers in gutter
 Plug 'benekastah/neomake'               " compile, lint, etc.
 Plug 'christoomey/vim-tmux-navigator'   " tmux compatability
 Plug 'christoomey/vim-tmux-runner'      " send stuff to tmux
+Plug 'elmcast/elm-vim'                  " elm-format support
+" Plug 'jreut/vim-colors-jreut'           " my color scheme
+Plug '~/code/vim-colors-jreut'
 Plug 'janko-m/vim-test'                 " run test files
 Plug 'junegunn/vim-peekaboo'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user'            " support textobj-rubyblock
 Plug 'ledger/vim-ledger'                " plain text accounting journals
 Plug 'mtth/scratch.vim'                 " gs, gS, :Scratch for a scratch buffer
+Plug 'pangloss/vim-javascript'          " JSX-compatible JS
 Plug 'mxw/vim-jsx'                      " JSX syntax
 Plug 'nelstrom/vim-textobj-rubyblock'   " `ar`, `ir` et al. text objects
 Plug 'sheerun/vim-polyglot'             " lots of languages
@@ -47,9 +51,9 @@ set ignorecase                          " case-insensitive search
 set incsearch                           " search as I type
 set laststatus=2                        " always show a status line
 set listchars+=tab:¬\ ,trail:·,nbsp:+,eol:◊,extends:▶,precedes:◀,conceal:※
-set nolist                              " show whitespace
-set nonumber                            " don't show line numbers
-set norelativenumber                    " off by default, but I turn it on when I do want numbers
+set list                              " show whitespace
+set number                            " don't show line numbers
+set relativenumber                    " off by default, but I turn it on when I do want numbers
 set shiftwidth=2                        " two-space indent
 set showcmd                             " show keymaps as I type
 set showtabline=2                       " always show the tab line
@@ -63,8 +67,14 @@ set updatetime=200                      " faster faster faster!
 " omit vim-flagship hostname
 let g:tabprefix=''
 
-" Let us use Pandoc syntax for markdown
-let g:polyglot_disabled = ['markdown']
+" Use custom language packages for these filetypes
+let g:polyglot_disabled = ['markdown', 'javascript', 'jsx']
+
+" elm-vim
+let g:elm_setup_keybindings = 0
+let g:elm_format_autosave = 1
+let g:elm_format_fail_silently = 0
+autocmd BufWritePost *.elm ElmMake
 
 autocmd VimResized * :wincmd =          " rebalance on resize
 autocmd! BufWritePost * Neomake         " run Neomake on write
@@ -78,6 +88,7 @@ nnoremap <silent> <leader>g :TestVisit<CR>
 
 " vim~fzf keymaps
 nnoremap <leader>p :Files<CR>
+nnoremap <leader>b :Buffers<CR>
 
 " GitGutter keymaps
 nnoremap ]h :GitGutterNextHunk<CR>

@@ -16,9 +16,16 @@
 	cm = commit -m
 	ds = diff --staged
 	dstat = diff --stat
+	lognicely = log --graph --oneline --decorate --all
 [push]
 	default = simple
 [init]
 	templatedir = /Users/jreut/.git_template
 [merge]
 	conflictstyle = diff3
+[pager]
+	log = $(brew --prefix)/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less
+	show = $(brew --prefix)/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less
+	diff = $(brew --prefix)/opt/git/share/git-core/contrib/diff-highlight/diff-highlight | less
+[core]
+	excludesfile = /Users/jreut/.gitignore
